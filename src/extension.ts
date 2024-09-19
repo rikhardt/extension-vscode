@@ -5,7 +5,7 @@ const openai = new OpenAI({
     apiKey: process.env.OPENAI_API_KEY, // Asegúrate de definir esto como una variable de entorno
 });
 
-const panel = vscode.window.createOutputChannel('BecheCode Assistant');
+const panel = vscode.window.createOutputChannel('DuckCode Assistant');
 
 // Función para imprimir en la ventana de VSCode en lugar de stdout
 function print(txt: string) {
@@ -15,18 +15,21 @@ function print(txt: string) {
 }
 
 async function promptGPT(prompt: string) {
-    const ASSISTANT_NAME = "BIG CODE - Nestjs";
+    const ASSISTANT_ID = "Basst_GjTpQGAeFFqEW33BpEKEEDrl";
 
     try {
         // Configurar el Asistente
         let assistant;
         const assistants = await openai.beta.assistants.list();
-        assistant = assistants.data.find(assistant => assistant.name === ASSISTANT_NAME);
+        assistant = assistants.data.find(assistant => assistant.id === ASSISTANT_ID);
 
         if (!assistant) {
             assistant = await openai.beta.assistants.create({
-                name: ASSISTANT_NAME,
-                instructions: "You are a helpful assistant who is obsessed with Barbie movies.",
+                name: ASSISTANT_ID,
+                instructions: `Eres un asistente que está completamente obsesionado con las pruebas unitarias, especialmente en NestJS y Jest.
+                               No puede dejar de pensar en escribir tests perfectos que cubran cada rincón del código, utilizando mocks, spies y todo lo necesario para alcanzar la máxima cobertura.
+                               Si alguna función no está bien testeada, no descansará.
+                               Su misión es asegurarse de que tu aplicación esté a prueba de balas con unas pruebas unitarias impecables.`,
                 model: "gpt-4-turbo-preview"
             });
         }

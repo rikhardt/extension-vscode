@@ -1,6 +1,6 @@
 {
-  "name": "beche-code",
-  "displayName": "BECHECODE-NESTJS",
+  "name": "duck-code",
+  "displayName": "Duck Code",
   "description": "NestJS Unit Test Generator",
   "publisher": "ms-vscode",
   "version": "0.0.1",
@@ -21,7 +21,7 @@
     "commands": [
       {
         "command": "extension.unittest",
-        "title": "BECHE: Generate Unit Tests"
+        "title": "DUCK: Generate Unit Tests"
       }
     ]
   },
