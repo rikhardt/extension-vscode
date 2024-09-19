@@ -2,13 +2,18 @@
   "name": "beche-code",
   "displayName": "BECHECODE-NESTJS",
   "description": "NestJS Unit Test Generator",
+  "publisher": "ms-vscode",
   "version": "0.0.1",
   "engines": {
     "vscode": "^1.93.0"
   },
+  "author": {
+    "name": "Ricardo"
+  },
   "categories": [
     "Other"
   ],
+  "icon": "images/duck.png",
   "activationEvents": [],
   "main": "./dist/extension.js",
   "contributes": {
@@ -23,6 +28,7 @@
     "type": "git",
     "url": "https://github.com/rikhardt/extension-vscode.git"
   },
+  "homepage": "https://github.com/rikhardt/extension-vscode/blob/main/README.md",
   "scripts": {
     "vscode:prepublish": "yarn run package",
     "compile": "webpack",
