@@ -3,7 +3,7 @@
   "displayName": "Duck Code",
   "description": "NestJS Unit Test Generator",
   "publisher": "ms-vscode",
-  "version": "0.0.1",
+  "version": "0.0.4",
   "engines": {
     "vscode": "^1.93.0"
   },
@@ -39,7 +39,13 @@
     "watch-tests": "tsc -p . -w --outDir out",
     "pretest": "yarn run compile-tests && yarn run compile && yarn run lint",
     "lint": "eslint src",
-    "test": "vscode-test"
+    "test": "vscode-test",
+    "release": "standard-version"
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-customizable"
+    }
   },
   "devDependencies": {
     "@types/mocha": "^10.0.7",
@@ -49,7 +55,9 @@
     "@typescript-eslint/parser": "^8.3.0",
     "@vscode/test-cli": "^0.0.10",
     "@vscode/test-electron": "^2.4.1",
+    "commitizen": "^4.3.0",
     "eslint": "^9.9.1",
+    "standard-version": "^9.5.0",
     "ts-loader": "^9.5.1",
     "typescript": "^5.5.4",
     "webpack": "^5.94.0",
